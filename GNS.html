@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GrowthNest Solutions</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    color:#222;
+    line-height:1.6;
+}
+
+/* Navbar */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 8%;
+    background:#0f172a;
+}
+
+.logo{
+    color:white;
+    font-size:1.6rem;
+    font-weight:700;
+}
+
+.nav-links{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+}
+
+.menu{
+    display:none;
+    color:white;
+    font-size:1.8rem;
+    cursor:pointer;
+}
+
+/* Hero */
+
+.hero{
+    min-height:90vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px;
+    background:linear-gradient(135deg,#0f172a,#1e293b,#2563eb);
+    color:white;
+}
+
+.hero h1{
+    font-size:3.5rem;
+    margin-bottom:20px;
+}
+
+.hero p{
+    max-width:700px;
+    margin:auto;
+    margin-bottom:30px;
+    font-size:1.1rem;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 28px;
+    margin:10px;
+    border-radius:8px;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.btn-primary{
+    background:white;
+    color:#2563eb;
+    font-weight:600;
+}
+
+.btn-secondary{
+    border:2px solid white;
+    color:white;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+/* Stats */
+
+.stats{
+    padding:70px 8%;
+}
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.stat{
+    text-align:center;
+    background:#f8fafc;
+    padding:30px;
+    border-radius:10px;
+}
+
+.stat h2{
+    color:#2563eb;
+}
+
+/* Services */
+
+.services{
+    padding:80px 8%;
+    background:#f8fafc;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+}
+
+.card{
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    text-align:center;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card i{
+    font-size:2rem;
+    margin-bottom:15px;
+    color:#2563eb;
+}
+
+/* Why Us */
+
+.why{
+    padding:80px 8%;
+}
+
+.why-container{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    align-items:center;
+}
+
+.features p{
+    margin-bottom:15px;
+    font-size:1.05rem;
+}
+
+/* Testimonials */
+
+.testimonials{
+    background:#f8fafc;
+    padding:80px 8%;
+}
+
+.testimonial-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.testimonial{
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+}
+
+/* CTA */
+
+.cta{
+    padding:100px 8%;
+    text-align:center;
+    background:linear-gradient(135deg,#2563eb,#1e293b);
+    color:white;
+}
+
+.cta h2{
+    margin-bottom:15px;
+}
+
+/* Contact */
+
+.contact{
+    padding:80px 8%;
+}
+
+form{
+    max-width:600px;
+    margin:auto;
+}
+
+input,textarea{
+    width:100%;
+    padding:14px;
+    margin:10px 0;
+    border:1px solid #ddd;
+    border-radius:8px;
+}
+
+button{
+    width:100%;
+    padding:14px;
+    border:none;
+    background:#2563eb;
+    color:white;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+/* Footer */
+
+footer{
+    background:#0f172a;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+/* Animation */
+
+.hidden{
+    opacity:0;
+    transform:translateY(40px);
+    transition:.7s;
+}
+
+.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    .hero h1{
+        font-size:2.3rem;
+    }
+
+    .cards,
+    .stats-grid,
+    .testimonial-grid,
+    .why-container{
+        grid-template-columns:1fr;
+    }
+
+    .menu{
+        display:block;
+    }
+
+    .nav-links{
+        display:none;
+        position:absolute;
+        top:70px;
+        left:0;
+        width:100%;
+        background:#0f172a;
+        flex-direction:column;
+        text-align:center;
+        padding:20px;
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav class="navbar">
+<div class="logo">GrowthNest Solutions</div>
+
+<ul class="nav-links" id="navLinks">
+<li><a href="#home">Home</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#why">Why Us</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+<div class="menu" id="menu">
+<i class="fas fa-bars"></i>
+</div>
+</nav>
+</header>
+
+<section class="hero" id="home">
+<div>
+<h1>Accelerate Your Business Growth</h1>
+<p>
+Professional websites and digital solutions that help businesses
+reach more customers and increase revenue.
+</p>
+
+<a href="#services" class="btn btn-primary">Our Services</a>
+<a href="#contact" class="btn btn-secondary">Get Started</a>
+</div>
+</section>
+
+<section class="stats">
+<div class="stats-grid">
+<div class="stat hidden">
+<h2>250+</h2>
+<p>Projects Completed</p>
+</div>
+
+<div class="stat hidden">
+<h2>120+</h2>
+<p>Happy Clients</p>
+</div>
+
+<div class="stat hidden">
+<h2>98%</h2>
+<p>Satisfaction Rate</p>
+</div>
+
+<div class="stat hidden">
+<h2>24/7</h2>
+<p>Support</p>
+</div>
+</div>
+</section>
+
+<section class="services" id="services">
+<h2 class="section-title">Our Services</h2>
+
+<div class="cards">
+
+<div class="card hidden">
+<i class="fas fa-code"></i>
+<h3>Web Development</h3>
+<p>Modern responsive websites built for performance.</p>
+</div>
+
+<div class="card hidden">
+<i class="fas fa-laptop"></i>
+<h3>Landing Pages</h3>
+<p>High-converting pages for products and businesses.</p>
+</div>
+
+<div class="card hidden">
+<i class="fas fa-robot"></i>
+<h3>Automation</h3>
+<p>Streamline operations with digital workflows.</p>
+</div>
+
+<div class="card hidden">
+<i class="fas fa-chart-line"></i>
+<h3>SEO Growth</h3>
+<p>Improve visibility and attract more customers.</p>
+</div>
+
+</div>
+</section>
+
+<section class="why" id="why">
+<div class="why-container">
+
+<div>
+<h2>Why Choose Us?</h2>
+<p>We combine design, technology, and strategy to help businesses grow online.</p>
+</div>
+
+<div class="features">
+<p>✅ Fast Delivery</p>
+<p>✅ Mobile Responsive Design</p>
+<p>✅ Modern User Experience</p>
+<p>✅ Affordable Pricing</p>
+<p>✅ Ongoing Support</p>
+</div>
+
+</div>
+</section>
+
+<section class="testimonials">
+<h2 class="section-title">Testimonials</h2>
+
+<div class="testimonial-grid">
+
+<div class="testimonial hidden">
+<p>"Excellent service and communication throughout the project."</p>
+<h4>- Business Owner</h4>
+</div>
+
+<div class="testimonial hidden">
+<p>"Professional website delivered ahead of schedule."</p>
+<h4>- Startup Founder</h4>
+</div>
+
+<div class="testimonial hidden">
+<p>"Helped us increase online inquiries significantly."</p>
+<h4>- Marketing Manager</h4>
+</div>
+
+</div>
+</section>
+
+<section class="cta">
+<h2>Ready to Grow Your Business?</h2>
+<p>Let's build something amazing together.</p>
+</section>
+
+<section class="contact" id="contact">
+<h2 class="section-title">Contact Us</h2>
+
+<form id="contactForm">
+<input type="text" placeholder="Your Name" required>
+<input type="email" placeholder="Your Email" required>
+<textarea rows="5" placeholder="Your Message" required></textarea>
+<button type="submit">Send Message</button>
+</form>
+
+<p id="message" style="text-align:center;margin-top:15px;"></p>
+</section>
+
+<footer>
+<p>© 2026 GrowthNest Solutions | Built by Sreesaran</p>
+</footer>
+
+<script>
+const menu=document.getElementById("menu");
+const navLinks=document.getElementById("navLinks");
+
+menu.addEventListener("click",()=>{
+navLinks.classList.toggle("active");
+});
+
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+});
+});
+
+document.querySelectorAll(".hidden").forEach(el=>{
+observer.observe(el);
+});
+
+document.getElementById("contactForm")
+.addEventListener("submit",(e)=>{
+e.preventDefault();
+document.getElementById("message").innerText=
+"Thank you! Your message has been received.";
+e.target.reset();
+});
+</script>
+
+</body>
+</html>
